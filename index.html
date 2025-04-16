@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>이효정 포트폴리오</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Noto Sans KR', sans-serif;
+      background-color: #f9f9f9;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #333;
+      color: white;
+      padding: 20px 0;
+      text-align: center;
+    }
+
+    nav {
+      background-color: #ddd;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding: 15px 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #333;
+      background-color: #788ca0;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      background-color: #5a7186;
+      color: white;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 20px;
+    }
+
+    section {
+      margin-bottom: 80px;
+      padding: 20px;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    }
+
+    h2 {
+      color: #333;
+      margin-bottom: 15px;
+    }
+
+    /* 프로필 섹션 */
+    #profile-section {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 40px;
+    }
+
+    #profile-pic {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 5px solid #ccc;
+      box-shadow: 0 0 8px rgba(0, 0, 0, 0.15);
+    }
+
+    .profile-info {
+      max-width: 500px;
+      text-align: left;
+    }
+
+    .profile-info h2 {
+      margin-bottom: 10px;
+      color: #222;
+    }
+
+    .profile-info p {
+      line-height: 1.7;
+    }
+
+    .info-list {
+      list-style: none;
+      padding: 0;
+      font-size: 16px;
+      line-height: 2;
+    }
+
+    .info-list span {
+      font-weight: bold;
+      margin-right: 10px;
+    }
+
+    .info-list a {
+      color: #007BFF;
+      text-decoration: none;
+    }
+
+    .info-list a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- 🔹 헤더 -->
+  <header>
+    <h1>이효정 포트폴리오</h1>
+  </header>
+
+  <!-- 🔹 앵커 메뉴 -->
+  <nav>
+    <a href="#intro">소개</a>
+    <a href="#education">학력</a>
+    <a href="#career">경력</a>
+    <a href="#contact">프로젝트</a>
+  </nav>
+
+  <!-- 🔹 프로필 섹션 (메뉴 바로 아래!) -->
+  <section id="profile-section">
+    <img src="media/profile.jpg" alt="프로필 사진" id="profile-pic" />
+    <div class="profile-info">
+      <h2>👩‍💻 이효정</h2>
+      <p>안녕하세요! 저는 웹 개발을 공부하고 있는 예비 개발자입니다.<br>
+      사용자 중심의 웹페이지와 UI/UX 디자인에 관심이 많습니다.</p>
+      <ul class="info-list">
+        <li><span>📧 Email:</span> sugahj0329@duksung.ac.kr</li>
+        <li><span>🐙 GitHub:</span> <a href="https://github.com/hyojeong-02" target="_blank">hyojeong-02</a></li>
+        <li><span>📱 Phone:</span> 010-1234-5678</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 🔹 본문 섹션들 -->
+  <main>
+    <!-- 소개 -->
+    <section id="intro">
+      <h2>소개</h2>
+      <p>저는 꾸준한 학습과 실습을 통해 웹 기술을 익히고 있으며, HTML, CSS, JavaScript에 능숙합니다.
+      현재는 React 및 GitHub Pages를 활용한 프로젝트에 도전하고 있습니다.</p>
+    </section>
+
+    <!-- 학력 -->
+    <section id="education">
+      <h2>학력</h2>
+      <ul>
+        <li>덕성여자대학교 사이버보안전공 재학</li>
+        <li>인터넷기초, 양자컴퓨터보안, 네트워크 등 이수</li>
+      </ul>
+    </section>
+
+    <!-- 경력 -->
+    <section id="career">
+      <h2>경력</h2>
+      <ul>
+        <li>없..................음..........</li>
+      </ul>
+    </section>
+
+<!-- 프로젝트 -->
+<section id="contact">
+  <h2>📁 <strong>프로젝트</strong></h2>
+
+  <ol>
+    <li><strong>덕성여자대학교 맛집 소개 프로젝트</strong><br>
+      : 덕성여자대학교 주변의 맛집 정보를 담은 웹 사이트 제작
+    </li>
+  </ol>
+
+  <div style="display: flex; align-items: center; gap: 20px; border: 1px solid #999; padding: 20px; margin-top: 20px; background-color: #f8f8f8;">
+    <img src="media/project_image.jpg" alt="맛집 프로젝트 이미지" width="150" style="border-radius: 10px;" />
+    <a href="https://github.com/hayunjong2025/duksung_diner" target="_blank" style="font-size: 16px; color: blue;">
+      https://github.com/hayunjong2025/duksung_diner
+    </a>
+  </div>
+</section>
+  </main>
+</body>
+</html>
