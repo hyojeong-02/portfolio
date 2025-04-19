@@ -1,0 +1,118 @@
+/* style.css */
+
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Noto Sans KR', sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+  }
+  
+  header {
+    background-color: #333;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+  }
+  
+  nav {
+    background-color: #ddd;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  
+  nav a {
+    text-decoration: none;
+    color: #333;
+    background-color: #788ca0;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+  }
+  
+  nav a:hover {
+    background-color: #5a7186;
+    color: white;
+  }
+  
+  main {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+  }
+  
+  section {
+    margin-bottom: 80px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.05);
+  }
+  
+  h2 {
+    color: #333;
+    margin-bottom: 15px;
+  }
+  
+  /* 프로필 섹션 */
+  #profile-section {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 40px;
+  }
+  
+  #profile-pic {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid #ccc;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.15);
+  }
+  
+  .profile-info {
+    max-width: 500px;
+    text-align: left;
+  }
+  
+  .profile-info h2 {
+    margin-bottom: 10px;
+    color: #222;
+  }
+  
+  .profile-info p {
+    line-height: 1.7;
+  }
+  
+  .info-list {
+    list-style: none;
+    padding: 0;
+    font-size: 16px;
+    line-height: 2;
+  }
+  
+  .info-list span {
+    font-weight: bold;
+    margin-right: 10px;
+  }
+  
+  .info-list a {
+    color: #007BFF;
+    text-decoration: none;
+  }
+  
+  .info-list a:hover {
+    text-decoration: underline;
+  }
+  

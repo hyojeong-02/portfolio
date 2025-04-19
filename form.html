@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>맛집 설문 제출 폼</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      text-align: center;
+    }
+
+    form {
+      background-color: white;
+      padding: 30px;
+      margin: 50px auto;
+      width: 500px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    fieldset {
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      margin-bottom: 20px;
+      padding: 20px;
+      text-align: left;
+    }
+
+    legend {
+      font-weight: bold;
+      padding: 0 10px;
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      margin-bottom: 5px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    select,
+    textarea {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      margin-bottom: 10px;
+    }
+
+    .radio-group label {
+      display: block;
+      margin: 4px 0;
+    }
+
+    button {
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+  </style>
+
+  <script>
+    function submitForm(event) {
+      event.preventDefault();
+
+      const email = document.getElementById("email").value;
+      const name = document.getElementById("name").value;
+      const message = document.getElementById("message").value;
+      const drink = document.getElementById("drink").value;
+
+      const selectedRestaurant = document.querySelector('input[name="restaurant"]:checked');
+      const restaurant = selectedRestaurant ? selectedRestaurant.value : '';
+
+      fetch("https://script.google.com/macros/s/AKfycby8Hv0NH3uOzD5TIgbgdAQyfnRo_eL9mYi7B2sYhE6c7mFSlK6ahGBqJl2l7WhCCh4/exec", {
+        method: "POST",
+        mode: "no-cors",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded"
+        },
+        body: `email=${encodeURIComponent(email)}&name=${encodeURIComponent(name)}&restaurant=${encodeURIComponent(restaurant)}&drink=${encodeURIComponent(drink)}&message=${encodeURIComponent(message)}`
+      }).then(() => {
+        alert("제출이 완료되었습니다!");
+        document.querySelector("form").reset(); // 폼 초기화
+      }).catch(error => {
+        alert("전송 실패: " + error.message);
+      });
+    }
+  </script>
+</head>
+
+<body>
+  <h2>🍽️ 덕성여대 맛집 설문 폼</h2>
+
+  <form onsubmit="submitForm(event)">
+    <!-- 🔹 기본 정보 그룹 -->
+    <fieldset>
+      <legend>📋 기본 정보</legend>
+      <label for="email">이메일:</label>
+      <input type="email" id="email" name="email" placeholder="example@duksung.ac.kr">
+
+      <label for="name">이름:</label>
+      <input type="text" id="name" name="name" placeholder="이름을 입력하세요">
+    </fieldset>
+
+    <!-- 🔹 설문 그룹 -->
+    <fieldset>
+      <legend>🍴 설문 내용</legend>
+
+      <label>자주 가는 식당을 선택해주세요 (1개만):</label>
+      <div class="radio-group">
+        <label><input type="radio" name="restaurant" value="우이동주막집"> 우이동주막집</label>
+        <label><input type="radio" name="restaurant" value="솔밭집"> 솔밭집</label>
+        <label><input type="radio" name="restaurant" value="시골농장"> 시골농장</label>
+        <label><input type="radio" name="restaurant" value="사리원돼지국밥"> 사리원돼지국밥</label>
+        <label><input type="radio" name="restaurant" value="갈비냉면"> 갈비냉면</label>
+        <label><input type="radio" name="restaurant" value="원더버거"> 원더버거</label>
+        <label><input type="radio" name="restaurant" value="하루 한끼"> 하루 한끼</label>
+        <label><input type="radio" name="restaurant" value="리얼파스타"> 리얼파스타</label>
+        <label><input type="radio" name="restaurant" value="엘수에뇨"> 엘수에뇨</label>
+        <label><input type="radio" name="restaurant" value="황금성"> 황금성</label>
+        <label><input type="radio" name="restaurant" value="쎄쎄"> 쎄쎄</label>
+        <label><input type="radio" name="restaurant" value="마라순코우 마라탕"> 마라순코우 마라탕</label>
+        <label><input type="radio" name="restaurant" value="다몬초밥"> 다몬초밥</label>
+        <label><input type="radio" name="restaurant" value="고도라멘"> 고도라멘</label>
+        <label><input type="radio" name="restaurant" value="양국"> 양국</label>
+        <label><input type="radio" name="restaurant" value="상미규카츠"> 상미규카츠</label>
+      </div>
+
+      <label for="drink">식사 후 마시는 음료:</label>
+      <select id="drink" name="drink">
+        <option value="아메리카노">아메리카노</option>
+        <option value="카페라떼">카페라떼</option>
+        <option value="탄산음료">탄산음료</option>
+        <option value="기타">기타</option>
+      </select>
+
+      <label for="message">기타 의견:</label>
+      <textarea id="message" name="message" rows="4" placeholder="기타 음료"></textarea>
+    </fieldset>
+
+    <button type="submit">제출</button>
+  </form>
+</body>
+</html>
